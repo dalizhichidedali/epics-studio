@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPICS - Enspire Potential: Immersive Cleantech Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        :root {
+            --primary-light: #4ECDC4;
+            --primary-green: #45B7AA;
+            --secondary-dark-blue: #2C3E50;
+            --secondary-dark-green: #1A5F4A;
+            --accent: #00B894;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --border: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-image {
+            height: 60px;
+            width: auto;
+            opacity: 0;
+        }
+
+        .logo-divider {
+            width: 2px;
+            height: 50px;
+            background: linear-gradient(to bottom, var(--primary-light), var(--primary-green));
+            opacity: 0;
+        }
+
+        .logo-text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--secondary-dark-blue);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            line-height: 1.3;
+            opacity: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 180px 20px 100px;
+            background: linear-gradient(135deg, var(--white) 0%, #e8f8f7 50%, #d4f5f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(78,205,196,0.1) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            color: var(--secondary-dark-blue);
+            margin-bottom: 20px;
+            position: relative;
+            opacity: 0;
+        }
+
+        .hero-subtitle {
+            font-size: 28px;
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: 30px;
+            opacity: 0;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 36px;
+            color: var(--secondary-dark-blue);
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-light), var(--primary-green));
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about p {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            margin-top: 40px;
+            opacity: 0;
+        }
+
+        /* Modules Section */
+        .modules {
+            background: linear-gradient(180deg, var(--light-gray) 0%, var(--white) 100%);
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .module-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .module-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(78,205,196,0.2);
+        }
+
+        .module-card h3 {
+            color: var(--secondary-dark-blue);
+            margin-bottom: 20px;
+            font-size: 24px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .module-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-light), var(--primary-green));
+            border-radius: 2px;
+        }
+
+        .module-card p {
+            color: var(--text-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* Video Section */
+        .video {
+            background-color: var(--white);
+        }
+
+        .video-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+            opacity: 0;
+        }
+
+        .video-placeholder {
+            background: linear-gradient(135deg, var(--secondary-dark-blue), var(--secondary-dark-green));
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 24px;
+            position: relative;
+        }
+
+        .video-placeholder::before {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        /* Registration Section */
+        .registration {
+            background: linear-gradient(135deg, var(--primary-light), var(--accent));
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .registration::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+        }
+
+        .registration::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            bottom: -50px;
+            left: -50px;
+        }
+
+        .registration .section-title {
+            color: var(--white);
+        }
+
+        .registration .section-title::after {
+            background: var(--white);
+        }
+
+        .registration-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            color: var(--text-dark);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary-dark-blue);
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 4px rgba(78,205,196,0.1);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-green));
+            color: var(--white);
+            border: none;
+            padding: 18px 50px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(78,205,196,0.4);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--light-gray);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--secondary-dark-blue), var(--secondary-dark-green));
+            color: var(--white);
+            padding: 60px 0;
+        }
+
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--white);
+            font-weight: 600;
+            opacity: 0;
+        }
+
+        .footer-logo-divider {
+            width: 2px;
+            height: 30px;
+            background: var(--primary-light);
+        }
+
+        .footer-logo-placeholder {
+            height: 50px;
+            background: rgba(255,255,255,0.15);
+            padding: 10px 25px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .footer-logo-placeholder:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+
+        /* Decorative Elements */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 20px;
+            }
+            
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .logo-text {
+                font-size: 10px;
+            }
+            
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .registration-box {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="website/EPICS Logo Website.png" alt="EPICS Logo" class="logo-image" id="header-logo">
+                    <div class="logo-divider" id="header-divider"></div>
+                    <div class="logo-text" id="header-text">
+                        Enspire Potential<br>
+                        Immersive Cleantech<br>
+                        Studio
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 id="hero-title">Welcome to EPICS</h1>
+            <p class="hero-subtitle" id="hero-subtitle">Program Description</p>
+            <p class="hero-description" id="hero-desc">
+                An Experiential Learning Environment for Building Operators and Retrofit Talent Pools
+            </p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">About EPICS</h2>
+            <div class="about-content">
+                <p>EPICS (Enspire Potential: Immersive Cleantech Studio) is a cutting-edge program designed to cultivate the next generation of building operators and retrofit professionals.</p>
+                <p>Through hands-on learning experiences and industry partnerships, we bridge the gap between education and real-world application in sustainable building technologies.</p>
+                <!-- V5 Content Image -->
+                <img src="website/V5 Website Items 3 and 6 - Can be in same section.pdf" alt="EPICS Overview" class="about-image" id="about-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section class="modules">
+        <div class="container">
+            <h2 class="section-title">Our Modules</h2>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <h3>Building Operations</h3>
+                    <p>Learn the fundamentals of building systems, energy management, and operational excellence through practical, hands-on training.</p>
+                </div>
+                <div class="module-card">
+                    <h3>Retrofit Technologies</h3>
+                    <p>Discover cutting-edge retrofit solutions for existing buildings to improve efficiency and sustainability.</p>
+                </div>
+                <div class="module-card">
+                    <h3>CleanTech Innovation</h3>
+                    <p>Explore emerging clean technologies and their applications in modern building management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video">
+        <div class="container">
+            <h2 class="section-title">EPICS Video</h2>
+            <div class="video-container" id="video-section">
+                <div class="video-placeholder">
+                    [Video Content Placeholder]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="registration">
+        <div class="container">
+            <h2 class="section-title">Register to Attend 2026 EPICS Sessions</h2>
+            <div class="registration-box">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="reg-name">Name</label>
+                        <input type="text" id="reg-name" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Email *</label>
+                        <input type="email" id="reg-email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-message">Message</label>
+                        <textarea id="reg-message" rows="4" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Register Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="attachment">Attach Files</label>
+                        <input type="file" id="attachment">
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logos">
+                <div class="footer-logo-item" id="footer-1">
+                    <div class="footer-logo-placeholder">Enspire</div>
+                </div>
+                <div class="footer-logo-divider"></div>
+                <div class="footer-logo-item" id="footer-2">
+                    <div class="footer-logo-placeholder">NRCan</div>
+                </div>
+                <div class="footer-logo-divider"></div>
+                <div class="footer-logo-item" id="footer-3">
+                    <div class="footer-logo-placeholder">BOMA Canada</div>
+                </div>
+            </div>
+            <p class="copyright">
+                © 2025 Enspire Potential: Immersive Cleantech Studio (EPICS) - All Rights Reserved
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Anime.js Animations on Load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header animations
+            anime.timeline({ easing: 'easeOutExpo' })
+                .add({
+                    targets: '#header-logo',
+                    opacity: [0, 1],
+                    translateX: [-30, 0],
+                    duration: 800
+                })
+                .add({
+                    targets: '#header-divider',
+                    opacity: [0, 1],
+                    scaleY: [0, 1],
+                    duration: 600
+                }, '-=400')
+                .add({
+                    targets: '#header-text',
+                    opacity: [0, 1],
+                    translateX: [30, 0],
+                    duration: 600
+                }, '-=400');
+
+            // Hero section
+            anime({
+                targets: '#hero-title',
+                opacity: [0, 1],
+                translateY: [50, 0],
+                duration: 1000,
+                delay: 300,
+                easing: 'easeOutExpo'
+            });
+
+            anime({
+                targets: '#hero-subtitle',
+                opacity: [0, 1],
+                translateY: [30, 0],
+                duration: 800,
+                delay: 600,
+                easing: 'easeOutExpo'
+            });
+
+            anime({
+                targets: '#hero-desc',
+                opacity: [0, 1],
+                translateY: [30, 0],
+                duration: 800,
+                delay: 900,
+                easing: 'easeOutExpo'
+            });
+
+            // About section
+            anime({
+                targets: '#about-img',
+                opacity: [0, 1],
+                scale: [0.9, 1],
+                duration: 1000,
+                delay: 300,
+                easing: 'easeOutExpo'
+            });
+
+            // Module cards - stagger animation
+            anime({
+                targets: '.module-card',
+                opacity: [0, 1],
+                translateY: [50, 0],
+                duration: 800,
+                delay: anime.stagger(150, {start: 500}),
+                easing: 'easeOutExpo'
+            });
+
+            // Video section
+            anime({
+                targets: '#video-section',
+                opacity: [0, 1],
+                scale: [0.95, 1],
+                duration: 1000,
+                delay: 300,
+                easing: 'easeOutExpo'
+            });
+
+            // Footer logos
+            anime({
+                targets: '.footer-logo-item',
+                opacity: [0, 1],
+                translateY: [20, 0],
+                duration: 600,
+                delay: anime.stagger(100, {start: 200}),
+                easing: 'easeOutExpo'
+            });
+
+            // Floating animation for hero
+            anime({
+                targets: '.hero',
+                translateY: [0, -5],
+                duration: 3000,
+                direction: 'alternate',
+                loop: true,
+                easing: 'easeInOutSine'
+            });
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

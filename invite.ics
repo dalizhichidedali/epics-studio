@@ -1,0 +1,155 @@
+BEGIN:VCALENDAR
+METHOD:REQUEST
+PRODID:Microsoft Exchange Server 2010
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:Eastern Standard Time
+BEGIN:STANDARD
+DTSTART:16010101T020000
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=1SU;BYMONTH=11
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010101T020000
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=2SU;BYMONTH=3
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+ORGANIZER;CN=Kirk Johnson:mailto:kirk@eco-efficiency.org
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=gorilla082
+ 5@gmail.com:mailto:gorilla0825@gmail.com
+ATTENDEE;ROLE=OPT-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=kirk:mailt
+ o:kirk@greenefficiency.org
+ATTENDEE;ROLE=OPT-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Jack Zhou:
+ mailto:Jack@ajec.ca
+ATTACH:CID:5ED3E047B7E1904C874C48EC8CDC9F66@CANPRD01.PROD.OUTLOOK.COM
+ATTACH:CID:A4D67596706C384E823A36BC825C0505@CANPRD01.PROD.OUTLOOK.COM
+ATTACH:CID:A4C4BB6F4A266442922FE2610DAED939@CANPRD01.PROD.OUTLOOK.COM
+ATTACH:CID:4036E212A0F6B54C97A8A303572959E6@CANPRD01.PROD.OUTLOOK.COM
+ATTACH:CID:3546A9A8C7204447A75F279E9E6C7E30@CANPRD01.PROD.OUTLOOK.COM
+ATTACH:CID:A2EE6AD2CE7A9F4C8C61A15428C3BAFA@CANPRD01.PROD.OUTLOOK.COM
+ATTACH:CID:EFB7F5952396A143AE7279B8867CE11A@CANPRD01.PROD.OUTLOOK.COM
+ATTACH:CID:5ADC0E654196D141AA026279E384D483@CANPRD01.PROD.OUTLOOK.COM
+ATTACH:CID:407352F9804E6641BE109EB89D89D94C@CANPRD01.PROD.OUTLOOK.COM
+DESCRIPTION;LANGUAGE=en-CA:\n\nFrom: Kirk Johnson <kirk@eco-efficiency.org>
+ \nDate: Sunday\, February 22\, 2026 at 6:36 PM\nTo: gorilla0825@gmail.co
+ m <gorilla0825@gmail.com>\nCc: kirk <kirk@greenefficiency.org>\nSubject: F
+ W: Website Redesign\n\n\n\nFrom: Kirk Johnson <kirk@eco-efficiency.org>\nD
+ ate: Sunday\, February 22\, 2026 at 6:34 PM\nTo: grilla0825@gmail.com <g
+ rilla0825@gmail.com>\nCc: Jack Zhou <Jack@ajec.ca>\nSubject: FW: Website R
+ edesign\n\n\n\nFrom: Kirk Johnson <kirk@eco-efficiency.org>\nDate: Sunday\
+ , February 22\, 2026 at 2:39 PM\nTo: Alice huang <alicehuangstrawberry@g
+ mail.com>\, Jack Zhou <Jack@ajec.ca>\nCc: kirk <kirk@greenefficiency.org>\
+ nSubject: FW: Website Redesign\n\n\nGoDaddy Website Redesign per Style Gui
+ de\n\nwww.epics.studio<http://www.epics.studio/>\n\n\nLet me know their we
+ b designer email and I will give them access to the website\n\n\nIt may as
+ k for 2-factor so let me know when you are ready to login and I will provi
+ de\n\nCode or green light from my end\n\n\nOverview\n\n\nI need help redes
+ igning a GoDaddy website to align with our style guide and ensure brand co
+ mpliance. We have specific layout and content changes that need to be made
+  according to our supplied materials.\n\n\n\n  1.  - Redesign the website 
+ according to the style guide\, ensuring brand compliance with colors\, fon
+ ts\, and style.\n\n\n     *\nWhite Background\n\n     *\nSee Pages 6-8 of 
+ Brand Guidelines for Colors Codes & Fonts\n        *\nPrimary\n           
+ *\nLight Blue / Green\n           *\nRoboto\n\n        *\nSecondary\n     
+       *\nDarker Blue & Green\n           *\nOpen Sans\n\n\n  2.  - Fix pla
+ cement of the EPICS logo according to the example layout provided.\n\n    
+  *\nSee attached EPICS Logo\n\n        *\nUse Version add Wording for the 
+ Header per example Layout\n        *\nLogo & ENSPIRE POTENTIAL IMMERSIVE\n
+              CLEANTECH STUDIO\n\n        *\nEnsure Vertical line is betwee
+ n the logo and wording\n\n  3.  Use copy from the flyer to create a lead-i
+ n paragraph about EPICS\, placing it below the title and above the 'Regist
+ er to attend' box.\n\n\n     *\nSee attached V5 PDF\, PNG content for lead
+  in Paragraph with lines\n        *\n Word Version will Follow\n        *\
+ n\n  4.\nKeep current EPICS Video section after Item 3 and before Registra
+ tion\n\n\n  5.  - Remove the red and yellow flyer images from the website.
+ \n\n     *\nAlready removed in the Preview image\n     *\n\n  6.  - Add a 
+ lead-in paragraph about the Modules with an image for context.\n\n     *\n
+ Already Provided in item #3 with V5 Items png or PDF files\n\n     *\nAdd 
+ an Additional Section for Sessions Streams will follow\n        *\nSee V4 
+ Item 6b - Will be finalized Today)\n        *\n\n  7.\nKeep Embedded Regis
+ tration Section\n\n\n  1.  - Add logos at the bottom of the webpage\, usin
+ g the PDF for placement reference.\n\n     *\nUse Logos Provided See examp
+ le layout for spacing and sequencing\n\n        *\nEnspire    (Col
+ or)\n        *\n\n        *\nNRCan with Wording on Left and vertical line 
+ between\n        *\nBOMA Canada Logo with vertical line between\n\n       
+  *\n\n        *\n\n\nFrom: Kirk Johnson <kirk@eco-efficiency.org>\nDate: S
+ aturday\, February 21\, 2026 at 1:31 PM\nTo: Jack Zhou <Jack@ajec.ca>\nS
+ ubject: Website Redesign\n\n\nGoDaddy Website Redesign per Style Guide\n\n
+ www.epics.studio\n\n\nOverview\n\n\nI need help redesigning a GoDaddy webs
+ ite to align with our style guide and ensure brand compliance. We have spe
+ cific layout and content changes that need to be made according to our sup
+ plied materials.\n\nScope of work\n\n\n- Redesign the website according to
+  the style guide\, ensuring brand compliance with colors\, fonts\, and sty
+ le.\n\n- Fix placement of the EPICS logo according to the example layout p
+ rovided.\n\n- Use copy from the flyer to create a lead-in paragraph about 
+ EPICS\, placing it below the title and above the 'Register to attend' box.
+ \n\n- Remove the red and yellow flyer images from the website.\n\n- Add a 
+ lead-in paragraph about the Modules with an image for context.\n\n- Add lo
+ gos at the bottom of the webpage\, using the PDF for placement reference.\
+ n\n\n\n\n\n_______________________________________________________________
+ _________________\nMicrosoft Teams meeting\nJoin: https://teams.microsoft.
+ com/meet/26324462399008?p=FREzsVVMU2rv9NADq0\nMeeting ID: 263 244 623 990 
+ 08\nPasscode: LZ29AM9z\n________________________________\nNeed help?<https
+ ://aka.ms/JoinTeamsMeeting?omkt=en-US> | System reference<https://teams.mi
+ crosoft.com/l/meetup-join/19%3ameeting_NzEwYmY1MGEtZjViMy00MGQ3LTgzZTQtY2Q
+ wMTQ3MTI4NmZh%40thread.v2/0?context=%7b%22Tid%22%3a%22dc07983b-133d-43a9-8
+ fe9-44de205a4667%22%2c%22Oid%22%3a%22f262db4a-5bea-4eb9-b025-741abe2ba4dd%
+ 22%7d>\nFor organizers: Meeting options<https://teams.microsoft.com/meetin
+ gOptions/?organizerId=f262db4a-5bea-4eb9-b025-741abe2ba4dd&tenantId=dc0798
+ 3b-133d-43a9-8fe9-44de205a4667&threadId=19_meeting_NzEwYmY1MGEtZjViMy00MGQ
+ 3LTgzZTQtY2QwMTQ3MTI4NmZh@thread.v2&messageId=0&language=en-US>\n_________
+ _______________________________________________________________________\n
+UID:040000008200E00074C5B7101A82E008000000006FFD9AED5BA4DC01000000000000000
+ 010000000F430BFC6F202B142B32C7B1E7D3E6F6D
+SUMMARY;LANGUAGE=en-CA:FW: Website Redesign
+DTSTART;TZID=Eastern Standard Time:20260222T193000
+DTEND;TZID=Eastern Standard Time:20260222T200000
+CLASS:PUBLIC
+PRIORITY:5
+DTSTAMP:20260223T003258Z
+TRANSP:OPAQUE
+STATUS:CONFIRMED
+SEQUENCE:0
+LOCATION;LANGUAGE=en-CA:Microsoft Teams Meeting
+X-MICROSOFT-CDO-APPT-SEQUENCE:0
+X-MICROSOFT-CDO-OWNERAPPTID:2124592956
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-ONLINEMEETINGEXTERNALLINK:
+X-MICROSOFT-ONLINEMEETINGINFORMATION:{"OnlineMeetingChannelId":null\,"Onlin
+ eMeetingProvider":3}
+X-MICROSOFT-SKYPETEAMSMEETINGURL:https://teams.microsoft.com/l/meetup-join/
+ 19%3ameeting_NzEwYmY1MGEtZjViMy00MGQ3LTgzZTQtY2QwMTQ3MTI4NmZh%40thread.v2/
+ 0?context=%7b%22Tid%22%3a%22dc07983b-133d-43a9-8fe9-44de205a4667%22%2c%22O
+ id%22%3a%22f262db4a-5bea-4eb9-b025-741abe2ba4dd%22%7d
+X-MICROSOFT-SCHEDULINGSERVICEUPDATEURL:https://api.scheduler.teams.microsof
+ t.com/teams/dc07983b-133d-43a9-8fe9-44de205a4667/f262db4a-5bea-4eb9-b025-7
+ 41abe2ba4dd/19_meeting_NzEwYmY1MGEtZjViMy00MGQ3LTgzZTQtY2QwMTQ3MTI4NmZh@th
+ read.v2/0
+X-MICROSOFT-SKYPETEAMSPROPERTIES:{"cid":"19:meeting_NzEwYmY1MGEtZjViMy00MGQ
+ 3LTgzZTQtY2QwMTQ3MTI4NmZh@thread.v2"\,"rid":0\,"mid":0\,"uid":null\,"priva
+ te":true\,"type":0}
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MICROSOFT-REQUESTEDATTENDANCEMODE:DEFAULT
+X-MICROSOFT-ISRESPONSEREQUESTED:TRUE
+X-MICROSOFT-LOCATIONDISPLAYNAME:Microsoft Teams Meeting
+X-MICROSOFT-LOCATIONSOURCE:None
+X-MICROSOFT-LOCATIONS:[{"DisplayName":"Microsoft Teams Meeting"\,"LocationA
+ nnotation":""\,"LocationUri":""\,"LocationStreet":""\,"LocationCity":""\,"
+ LocationState":""\,"LocationCountry":""\,"LocationPostalCode":""\,"Locatio
+ nFullAddress":""}]
+BEGIN:VALARM
+DESCRIPTION:REMINDER
+TRIGGER;RELATED=START:-PT15M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR
